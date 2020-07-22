@@ -25,6 +25,13 @@ app.get('/intro', (req, res) => {
     });
 });
 
+app.get('*', (req, res) => {
+    res.send({
+        errorCode: "404",
+        errorMessage: "please go to valid url"
+    });
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
